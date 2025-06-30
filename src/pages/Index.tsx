@@ -25,15 +25,13 @@ const Index = () => {
         <ProductHighlights />
         <MarketingSlider />
         <LocationsMap />
-        <About />
-        <Testimonials />
         <FAQ />
-        <Newsletter />
+        <Testimonials />
         <ContactSection />
-        <ContactForm />
+        
       </main>
       <Footer />
-      <WhatsAppFloat />
+      
     </div>
   );
 };

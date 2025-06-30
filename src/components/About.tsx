@@ -119,7 +119,7 @@ const About = () => {
           }`}>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2000" 
+                src="/image 24.png" 
                 alt="Dinesh Gupta Limited manufacturing facility"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />

@@ -189,7 +189,7 @@ const LocationsMap = () => {
         {/* Additional Information */}
         <div className="mt-16 text-center">
           <div className="bg-background rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h3 className="text-2xl font-semibold text-primary mb-4">
+            <h3 className="text-2xl font-serif font-semibold text-primary mb-4">
               Can't Find a Store Near You?
             </h3>
             <p className="text-muted-foreground mb-6">

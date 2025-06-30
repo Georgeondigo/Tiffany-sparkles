@@ -46,23 +46,27 @@ const SocialMedia = () => {
   ];
 
   return (
-    <div className="flex items-center space-x-4">
-      <span className="text-muted-foreground text-sm font-medium">Follow Us:</span>
-      <div className="flex items-center space-x-3">
-        {socialLinks.map((social) => (
-          <a
-            key={social.name}
-            href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-muted-foreground transition-all duration-300 transform hover:scale-110 ${social.color}`}
-            aria-label={`Follow us on ${social.name}`}
-          >
-            {social.icon}
-          </a>
-        ))}
+    <section id="contact">
+      <div className="flex items-center space-x-4">
+        <span className="text-muted-foreground text-sm font-medium">
+          Follow Us:
+        </span>
+        <div className="flex items-center space-x-3">
+          {socialLinks.map((social) => (
+            <a
+              key={social.name}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-muted-foreground transition-all duration-300 transform hover:scale-110 ${social.color}`}
+              aria-label={`Follow us on ${social.name}`}
+            >
+              {social.icon}
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

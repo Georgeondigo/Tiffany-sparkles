@@ -9,17 +9,26 @@ const WhatsAppFloat = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-      setTimeout(() => setShowTooltip(true), 3000);
+      setShowTooltip(true);
+
+      // Auto-hide the tooltip after 5 seconds
+      const hideTimer = setTimeout(() => {
+        setShowTooltip(false);
+      }, 5000);
+
+      // Clear hide timer if component unmounts
+      return () => clearTimeout(hideTimer);
     }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
+  
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
       "Hi! I'm interested in Tiffany Sparkles microfiber cloths. Could you please help me?"
     );
-    window.open(`https://wa.me/919876543210?text=${message}`, "_blank");
+    window.open(`https://wa.me/254111294844?text=${message}`, "_blank");
     setShowTooltip(false);
   };
 

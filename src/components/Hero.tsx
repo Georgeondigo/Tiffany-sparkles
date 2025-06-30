@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ArrowDown, MapPin, Star } from "lucide-react";
+import { ArrowDown, Award, Globe, MapPin, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import OrderNowButton from "./OrderNowButton";
 import { supabase } from "@/integrations/supabase/client";
 
 interface HeroContent {
@@ -18,8 +17,7 @@ const Hero = () => {
     subtitle: "Premium Microfiber Excellence",
     description:
       "Experience the ultimate in cleaning technology with our superior microfiber cloths. Designed for modern lifestyles, crafted with precision, and built to last.",
-    image_url:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000",
+    image_url: "",
   });
 
   useEffect(() => {
@@ -40,51 +38,37 @@ const Hero = () => {
       }
     } catch (error) {
       console.error("Error fetching hero content:", error);
-      // Keep fallback content if fetch fails
     }
   };
 
   const scrollToProducts = () => {
-    const element = document.getElementById("featured-products");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document
+      .getElementById("products")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToLocations = () => {
-    const element = document.getElementById("locations");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document
+      .getElementById("locations")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden  pt-40 md:pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 md:pt-0"
     >
-      {/* Wave Background Decoration */}
-      <div className="absolute top-0 left-0 right-0 h-32 wave-decoration"></div>
+      {/* Wave Decoration */}
+      <div className="absolute top-0 left-0 right-0 h-24 opacity-50 wave-decoration"></div>
 
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={content.image_url}
-          alt="Premium microfiber cloth background"
-          className="w-full h-full object-cover opacity-10"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-background/60"></div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto   md:mt-0 px-4 text-center">
+      {/* Main Content */}
+      <div className="relative z-10 container mx-auto pt-1 md:pt-36 px-4 text-center">
         <div
           className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-primary mb-6 leading-tight  md:mt-0">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-primary mb-6 leading-tight">
             {content.title.split(" ").map((word, index) => (
               <span
                 key={index}
@@ -100,43 +84,23 @@ const Hero = () => {
             ))}
           </h1>
 
-          {/* Tagline */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl font-sans text-muted-foreground mb-4 max-w-2xl mx-auto">
             {content.subtitle}
           </p>
 
-          {/* Description */}
-          <p className="text-base md:text-lg text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg font-sans text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
             {content.description}
           </p>
 
-          {/* Brand Attribution */}
-          <p className="text-sm text-muted-foreground mb-12">
-            A Premium Brand by{" "}
-            <span className="text-[#D4AF37] font-semibold">
-              Dinesh Gupta Limited
-            </span>
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            {/* Primary CTA - Order Now */}
-            <OrderNowButton
-              size="lg"
-              className="bg-[#D4AF37] text-black hover:bg-[#c49c2c] transform hover:scale-105 transition-all duration-300 shadow-lg"
-            />
-
-            {/* Secondary CTA - View Products */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14 md:mb-6">
             <Button
               onClick={scrollToProducts}
               variant="outline"
               size="lg"
               className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white transition-all duration-300"
             >
-              View Products
+              View Collection
             </Button>
-
-            {/* Tertiary CTA - Find a Store (Black Button with Gold Hover) */}
             <Button
               onClick={scrollToLocations}
               size="lg"
@@ -147,51 +111,81 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* value propositions section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Star className="text-[#D4AF37]" size={20} />
+          <div className="grid md:grid-cols-3 gap-8   mb-16">
+            <div className="text-center p-6">
+              <div className="w-14 h-14 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-6 h-6 text-gold-600" />
               </div>
-              <p className="text-sm font-medium text-primary">
+              <h3 className="text-xl font-semibold text-black mb-3">
                 Premium Quality
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Superior microfiber technology
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Star className="text-[#D4AF37]" size={20} />
-              </div>
-              <p className="text-sm font-medium text-primary">
-                Instant Support
-              </p>
-              <p className="text-xs text-muted-foreground">
-                WhatsApp customer service
+              </h3>
+              <p className="text-gray-600">
+                Crafted with precision using cutting-edge ultrasonic technology,
+                ensuring no frayed edges and superior performance.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                <MapPin className="text-[#D4AF37]" size={20} />
+            <div className="text-center p-6">
+              <div className="w-14 h-14 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-6 h-6 text-gold-600" />
               </div>
-              <p className="text-sm font-medium text-primary">Nationwide</p>
-              <p className="text-xs text-muted-foreground">
-                Available across India
+              <h3 className="text-xl font-semibold text-black mb-3">
+                Global Standards
+              </h3>
+              <p className="text-gray-600">
+                Originally made in the EU, now proudly manufactured in East
+                Africa, maintaining the highest international quality standards.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-14 h-14 bg-[#D4AF37]  rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-6 h-6 text-primary]" />
+              </div>
+              <h3 className="text-xl font-semibold font-sans text-black mb-3">
+                Trusted Excellence
+              </h3>
+              <p className="text-gray-600">
+                Chosen by professionals and enthusiasts across Africa for its
+                unmatched cleaning performance and durability.
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="text-[#D4AF37]" size={24} />
+          <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="animate-slide-in-left text-left">
+                <h2 className="text-3xl lg:text-4xl font-serif font-extrabold text-primary mb-4 tracking-tight">
+                  Why <span className="text-[#D4AF37]">Edgeless</span> Matters
+                </h2>
+                <p className="text-gray-700 mb-4 text-lg lg:text-xl leading-relaxed font-light">
+                  Microfibre cloths, first developed in Japan and perfected by
+                  Korean and German makers, transformed car care with their
+                  softness and cleaning power. But even the best cloth needs
+                  flawless design to prevent damage.
+                </p>
+                <p className="text-gray-700 text-lg lg:text-xl leading-relaxed font-light">
+                  That’s why{" "}
+                  <span className="font-semibold text-[#D4AF37]">edgeless</span>{" "}
+                  matters. Over time, stitched edges or labels can cause swirls
+                  and scratches. Our ultrasonically cut cloths ensure a
+                  seamless, gentle clean every time.
+                </p>
+              </div>
+              <div className="relative">
+                <img
+                  src="/image 28.png"
+                  alt="Premium manufacturing facility"
+                  className="rounded-xl shadow-lg w-full"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Decorative Elements */}
+      {/* Decorative Bars */}
       <div className="absolute top-1/4 left-10 w-2 h-16 bg-gradient-to-b from-secondary to-transparent opacity-60 hidden lg:block"></div>
       <div className="absolute top-1/3 right-10 w-2 h-24 bg-gradient-to-b from-secondary to-transparent opacity-60 hidden lg:block"></div>
     </section>

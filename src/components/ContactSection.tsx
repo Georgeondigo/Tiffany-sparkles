@@ -72,7 +72,8 @@ const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions about our products? We're here to help!
+            Follow us on our socials and join our clean club for more tips and
+            tricks!
           </p>
         </div>
 

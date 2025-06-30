@@ -2,6 +2,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Heart } from 'lucide-react';
 import SocialMedia from './SocialMedia';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -21,16 +22,18 @@ const Footer = () => {
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-8 h-8 bg-gradient-to-br from-secondary to-gold-light rounded-full"></div>
               <div>
-                <h3 className="text-2xl font-serif font-bold">Tiffany Sparkles</h3>
-                <p className="text-sm text-primary-foreground/80">by Dinesh Gupta Limited</p>
+                <h3 className="text-2xl font-serif font-bold">
+                  Tiffany Sparkles
+                </h3>
               </div>
             </div>
-            
+
             <p className="text-primary-foreground/90 mb-6 leading-relaxed max-w-md">
-              Experience the ultimate in cleaning technology with our premium microfiber cloths. 
-              Designed for modern lifestyles, crafted with precision, and built to last.
+              Experience the ultimate in cleaning technology with our premium
+              microfiber cloths. Designed for modern lifestyles, crafted with
+              precision, and built to last.
             </p>
-            
+
             <SocialMedia />
           </div>
 
@@ -39,32 +42,32 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => scrollToSection('home')}
+                <button
+                  onClick={() => scrollToSection("home")}
                   className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
                 >
                   Home
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('products')}
+                <button
+                  onClick={() => scrollToSection("products")}
                   className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
                 >
                   Products
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('about')}
+                <button
+                  onClick={() => scrollToSection("about")}
                   className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
                 >
                   About Us
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('locations')}
+                <button
+                  onClick={() => scrollToSection("locations")}
                   className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
                 >
                   Store Locations
@@ -81,36 +84,38 @@ const Footer = () => {
                 <Mail className="text-[#D4AF37]" size={18} />
                 <div>
                   <p className="text-primary-foreground/90 text-sm">Email</p>
-                  <a 
-                    href="mailto:info@tiffanysparkles.com" 
+                  <a
+                    href="mailto:info@tiffanysparkles.com"
                     className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
                   >
                     info@tiffanysparkles.com
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Phone className="text-[#D4AF37]" size={18} />
                 <div>
                   <p className="text-primary-foreground/90 text-sm">Phone</p>
-                  <a 
-                    href="tel:+919876543210" 
+                  <a
+                    href="tel:+919876543210"
                     className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
                   >
-                    +91 98765 43210
+                    +254 718 151 622 || +447933901040
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <MapPin className="text-[#D4AF37] mt-1" size={18} />
                 <div>
                   <p className="text-primary-foreground/90 text-sm">Address</p>
                   <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                    Dinesh Gupta Limited<br />
-                    Manufacturing Complex<br />
-                    Mumbai, Maharashtra 400001
+                    Dinesh Gupta Limited
+                    <br />
+                    Manufacturing Complex
+                    <br />
+                    Nairobi, kenya 400001
                   </p>
                 </div>
               </div>
@@ -124,26 +129,42 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-primary-foreground/80 text-sm">
-              © 2024 Tiffany Sparkles by Dinesh Gupta Limited. All rights reserved.
+              © 2025 Tiffany Sparkles. All rights reserved.
             </div>
-            
+
             <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300">
+              <Link
+                to="/privacy-policy"
+                className="text-primary-foreground/80 hover:text-secondary transition-colors duration-300"
+              >
                 Privacy Policy
-              </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300">
+              </Link>
+              <a
+                href="#"
+                className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300">
+              <a
+                href="#"
+                className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
+              >
                 Quality Guarantee
               </a>
             </div>
           </div>
-          
+
           <div className="text-center mt-4 pt-4 border-t border-primary-foreground/10">
-            <p className="text-primary-foreground/60 text-xs flex items-center justify-center">
-              Made with <Heart className="mx-1 text-[#D4AF37]" size={12} /> for a cleaner world
-            </p>
+            <a
+              href="https://geowebsolutions.co.ke"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative text-xs flex items-center justify-center hover:underline"
+            >
+              <span className="bg-gradient-to-r from-[#D4AF37] via-white to-[#D4AF37] bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer">
+                Built by GeoWebSolutions
+              </span>
+            </a>
           </div>
         </div>
       </div>

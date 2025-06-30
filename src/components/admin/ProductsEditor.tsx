@@ -167,18 +167,26 @@ const ProductsEditor = () => {
     <div className="space-y-6">
       <div className="grid md:grid-cols-2 gap-4">
         <div>
-          <label className="text-sm font-medium mb-2 block">Section Title</label>
+          <label className="text-sm font-medium mb-2 block">
+            Section Title
+          </label>
           <Input
             value={content.title}
-            onChange={(e) => setContent(prev => ({ ...prev, title: e.target.value }))}
+            onChange={(e) =>
+              setContent((prev) => ({ ...prev, title: e.target.value }))
+            }
             placeholder="e.g., Featured Products"
           />
         </div>
         <div>
-          <label className="text-sm font-medium mb-2 block">Section Description</label>
+          <label className="text-sm font-medium mb-2 block">
+            Section Description
+          </label>
           <Input
             value={content.description}
-            onChange={(e) => setContent(prev => ({ ...prev, description: e.target.value }))}
+            onChange={(e) =>
+              setContent((prev) => ({ ...prev, description: e.target.value }))
+            }
             placeholder="Description for the products section"
           />
         </div>
@@ -199,7 +207,7 @@ const ProductsEditor = () => {
               <CardTitle className="text-base">Product {index + 1}</CardTitle>
               <div className="flex items-center space-x-2">
                 <Button
-                  onClick={() => moveProduct(index, 'up')}
+                  onClick={() => moveProduct(index, "up")}
                   variant="outline"
                   size="sm"
                   disabled={index === 0}
@@ -207,7 +215,7 @@ const ProductsEditor = () => {
                   <MoveUp size={16} />
                 </Button>
                 <Button
-                  onClick={() => moveProduct(index, 'down')}
+                  onClick={() => moveProduct(index, "down")}
                   variant="outline"
                   size="sm"
                   disabled={index === content.products.length - 1}
@@ -226,28 +234,40 @@ const ProductsEditor = () => {
             <CardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Product Name</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Product Name
+                  </label>
                   <Input
                     value={product.name}
-                    onChange={(e) => updateProduct(index, 'name', e.target.value)}
+                    onChange={(e) =>
+                      updateProduct(index, "name", e.target.value)
+                    }
                     placeholder="Product name"
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Price</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Price
+                  </label>
                   <Input
                     value={product.price}
-                    onChange={(e) => updateProduct(index, 'price', e.target.value)}
+                    onChange={(e) =>
+                      updateProduct(index, "price", e.target.value)
+                    }
                     placeholder="e.g., ₹299"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">Description</label>
+                <label className="text-sm font-medium mb-2 block">
+                  Description
+                </label>
                 <Textarea
                   value={product.description}
-                  onChange={(e) => updateProduct(index, 'description', e.target.value)}
+                  onChange={(e) =>
+                    updateProduct(index, "description", e.target.value)
+                  }
                   placeholder="Product description"
                   rows={3}
                 />
@@ -255,18 +275,24 @@ const ProductsEditor = () => {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Rating</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Rating
+                  </label>
                   <Input
                     type="number"
                     min="1"
                     max="5"
                     step="0.1"
                     value={product.rating}
-                    onChange={(e) => updateProduct(index, 'rating', parseFloat(e.target.value))}
+                    onChange={(e) =>
+                      updateProduct(index, "rating", parseFloat(e.target.value))
+                    }
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Upload Image</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Upload Image
+                  </label>
                   <Input
                     type="file"
                     accept="image/*"
@@ -280,11 +306,13 @@ const ProductsEditor = () => {
 
               {product.image && (
                 <div className="mt-4">
-                  <label className="text-sm font-medium mb-2 block">Preview</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Preview
+                  </label>
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-32 h-32 object-cover rounded-lg"
+                    className="w-full max-w-xs h-auto object-contain rounded-lg bg-muted"
                   />
                 </div>
               )}
@@ -295,7 +323,7 @@ const ProductsEditor = () => {
 
       <Button onClick={handleSave} disabled={saving} className="w-full">
         <Save className="mr-2" size={16} />
-        {saving ? 'Saving...' : 'Save Changes'}
+        {saving ? "Saving..." : "Save Changes"}
       </Button>
     </div>
   );
