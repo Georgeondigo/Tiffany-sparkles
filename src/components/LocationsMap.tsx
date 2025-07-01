@@ -86,6 +86,19 @@ const LocationsMap = () => {
     );
   };
 
+  const scrollToLocations = () => {
+    document
+      .getElementById("locations")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+  
+  const scrollToContact = () => {
+    document
+      .getElementById("contact")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
+ 
   return (
     <section id="locations" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -209,7 +222,10 @@ const LocationsMap = () => {
                 Join our network of premium retail partners and bring Tiffany
                 Sparkles to your customers.
               </p>
-              <button className="bg-background text-primary px-4 py-2 rounded-lg font-medium hover:bg-background/90 transition-colors">
+              <button
+                onClick={scrollToContact}
+                className="bg-background text-primary px-4 py-2 rounded-lg font-medium hover:bg-background/90 transition-colors"
+              >
                 Contact Us
               </button>
             </div>
@@ -228,10 +244,16 @@ const LocationsMap = () => {
               purchasing options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+              <button
+                onClick={scrollToLocations}
+                className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              >
                 Find Nearest Store
               </button>
-              <button className="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors">
+              <button
+                onClick={scrollToContact}
+                className="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
                 Contact Sales Team
               </button>
             </div>
