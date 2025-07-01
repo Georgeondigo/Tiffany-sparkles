@@ -99,8 +99,8 @@ const AdminDashboard = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:space-x-4">
-              <h1 className="text-xl sm:text-2xl font-serif font-bold text-primary">
-                Tiffany Sparkles CMS
+              <h1 className="text-xl sm:text-2xl font-display font-bold text-primary">
+                Tiffany Sparkles Admin
               </h1>
               <span className="text-xs sm:text-sm text-muted-foreground">
                 Welcome, {user?.email}
