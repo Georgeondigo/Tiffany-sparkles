@@ -1,7 +1,8 @@
-
-import React, { useState, useEffect } from 'react';
-import { MapPin, Store, Phone, ExternalLink } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import React, { useState, useEffect } from "react";
+import { MapPin, Store, Phone, ExternalLink, Settings } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import InteractiveMap from "./InteractiveMap";
+import { Button } from "@/components/ui/button";
 
 interface StoreLocation {
   id: string;
@@ -19,6 +20,8 @@ const LocationsMap = () => {
   const [storeLocations, setStoreLocations] = useState<StoreLocation[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "";
+
   useEffect(() => {
     fetchStoreLocations();
   }, []);
@@ -26,46 +29,61 @@ const LocationsMap = () => {
   const fetchStoreLocations = async () => {
     try {
       const { data, error } = await supabase
-        .from('store_locations')
-        .select('*')
-        .eq('is_active', true)
-        .order('created_at', { ascending: false });
+        .from("store_locations")
+        .select("*")
+        .eq("is_active", true)
+        .order("created_at", { ascending: false });
 
       if (error) throw error;
 
       setStoreLocations(data || []);
     } catch (error) {
-      console.error('Error fetching store locations:', error);
-      // Fallback to sample data if fetch fails
+      console.error("Error fetching store locations:", error);
+
+      // Fallback sample data with coordinates
       setStoreLocations([
         {
-          id: '1',
+          id: "1",
           name: "Premium Homeware Mumbai",
           address: "123 Shopping Mall, Bandra West, Mumbai 400050",
           phone: "+91 98765 43210",
           store_type: "Retail Partner",
-          is_active: true
+          latitude: 19.0596,
+          longitude: 72.8295,
+          is_active: true,
         },
         {
-          id: '2',
+          id: "2",
           name: "Quality Essentials Delhi",
           address: "456 Market Street, Connaught Place, New Delhi 110001",
           phone: "+91 98765 43211",
           store_type: "Authorized Dealer",
-          is_active: true
+          latitude: 28.6139,
+          longitude: 77.209,
+          is_active: true,
         },
         {
-          id: '3',
+          id: "3",
           name: "Home Solutions Bangalore",
           address: "789 Commercial Complex, MG Road, Bangalore 560001",
           phone: "+91 98765 43212",
           store_type: "Retail Partner",
-          is_active: true
-        }
+          latitude: 12.9716,
+          longitude: 77.5946,
+          is_active: true,
+        },
       ]);
     } finally {
       setLoading(false);
     }
+  };
+
+  const openInGoogleMaps = (location: StoreLocation) => {
+    const query = encodeURIComponent(`${location.name} ${location.address}`);
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${query}`,
+      "_blank"
+    );
   };
 
   return (
@@ -83,50 +101,55 @@ const LocationsMap = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Map Container */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-background rounded-2xl shadow-lg p-0 h-full min-h-[400px] flex flex-col">
-              {/* Placeholder for Google Maps */}
-              <div className="flex-1 w-full bg-muted/50 rounded-xl flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
-                <div className="text-center z-10">
-                  <MapPin className="text-[#D4AF37] mx-auto mb-4" size={48} />
-                  <h3 className="text-xl font-semibold text-primary mb-2">
-                    Interactive Map
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Google Maps integration will be added here
-                  </p>
-                  <div className="text-sm text-muted-foreground bg-background/80 px-4 py-2 rounded-lg inline-block">
-                    <strong>Setup Instructions:</strong>
-                    <br />
-                    Add your Google Maps API key to enable interactive map
-                    functionality
-                  </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+          {/* Interactive Map Section */}
+          <div className="order-2 lg:order-1 h-full">
+            <div className="h-full bg-background rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                <div className="flex-1 min-h-[400px]">
+                <InteractiveMap
+                  locations={storeLocations}
+                />
                 </div>
 
-                {/* Simulated map pins based on store locations */}
-                {storeLocations.slice(0, 3).map((_, index) => (
-                  <div
-                    key={index}
-                    className={`absolute w-4 h-4 bg-secondary rounded-full animate-pulse ${
-                      index === 0
-                        ? "top-1/4 left-1/3"
-                        : index === 1
-                        ? "top-1/2 right-1/4"
-                        : "bottom-1/3 left-1/2"
-                    }`}
-                  ></div>
-                ))}
-              </div>
+              {/* Fallback Instructions */}
+              {!googleMapsApiKey && (
+                <div className="p-4 border-t bg-muted/50 flex items-start gap-4">
+                  <Settings
+                    className="text-primary mt-1 flex-shrink-0"
+                    size={20}
+                  />
+                  <div className="text-sm">
+                    <p className="font-medium text-primary mb-1">
+                      To enable the interactive map:
+                    </p>
+                    <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
+                      <li>
+                        Get a Google Maps API key from{" "}
+                        <a
+                          href="https://console.cloud.google.com/google/maps-apis"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-secondary hover:underline"
+                        >
+                          Google Cloud Console
+                        </a>
+                      </li>
+                      <li>Enable the Maps JavaScript API</li>
+                      <li>
+                        Configure your API key in the <code>.env.local</code>{" "}
+                        file as <code>NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</code>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
           {/* Store Locations List */}
           <div className="order-1 lg:order-2">
             <h3 className="text-2xl font-semibold text-primary mb-6 flex items-center">
-              <Store className="text-[#D4AF37] mr-3" size={28} />
+              <Store className="text-secondary mr-3" size={28} />
               Our Retail Partners
             </h3>
 
@@ -144,7 +167,7 @@ const LocationsMap = () => {
                       <h4 className="text-lg font-semibold text-primary">
                         {location.name}
                       </h4>
-                      <span className="text-xs bg-secondary/10 text-[#D4AF37] px-2 py-1 rounded-full">
+                      <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">
                         {location.store_type}
                       </span>
                     </div>
@@ -154,23 +177,32 @@ const LocationsMap = () => {
                       <span className="text-sm">{location.address}</span>
                     </div>
 
-                    {location.phone && (
-                      <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between">
+                      {location.phone && (
                         <div className="flex items-center text-muted-foreground">
                           <Phone size={16} className="mr-2" />
                           <span className="text-sm">{location.phone}</span>
                         </div>
-                        <button className="text-[#D4AF37] hover:text-[#D4AF37]/80 transition-colors">
-                          <ExternalLink size={16} />
-                        </button>
-                      </div>
-                    )}
+                      )}
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openInGoogleMaps(location);
+                        }}
+                        variant="outline"
+                        size="sm"
+                        className="ml-auto"
+                      >
+                        <ExternalLink size={16} className="mr-1" />
+                        View on Maps
+                      </Button>
+                    </div>
                   </div>
                 ))}
               </div>
             )}
 
-            {/* Contact for Partnership */}
+            {/* Contact CTA */}
             <div className="mt-8 bg-gradient-to-r from-primary to-secondary p-6 rounded-xl text-primary-foreground">
               <h4 className="text-lg font-semibold mb-3">
                 Interested in Partnership?
@@ -186,10 +218,10 @@ const LocationsMap = () => {
           </div>
         </div>
 
-        {/* Additional Information */}
+        {/* Footer Info */}
         <div className="mt-16 text-center">
           <div className="bg-background rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h3 className="text-2xl font-serif font-semibold text-primary mb-4">
+            <h3 className="text-2xl font-semibold text-primary mb-4">
               Can't Find a Store Near You?
             </h3>
             <p className="text-muted-foreground mb-6">
