@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapPin, Store, Phone, ExternalLink, Settings } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import InteractiveMap from "./InteractiveMap";
+import InteractiveMap from "@/components/InteractiveMap";
 import { Button } from "@/components/ui/button";
 
 interface StoreLocation {
@@ -105,11 +105,9 @@ const LocationsMap = () => {
           {/* Interactive Map Section */}
           <div className="order-2 lg:order-1 h-full">
             <div className="h-full bg-background rounded-2xl shadow-lg overflow-hidden flex flex-col">
-                <div className="flex-1 min-h-[400px]">
-                <InteractiveMap
-                  locations={storeLocations}
-                />
-                </div>
+              <div className="flex-1 min-h-[400px]">
+                <InteractiveMap locations={storeLocations} />
+              </div>
 
               {/* Fallback Instructions */}
               {!googleMapsApiKey && (
