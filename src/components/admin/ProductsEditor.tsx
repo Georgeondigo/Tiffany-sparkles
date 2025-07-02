@@ -245,7 +245,7 @@ const ProductsEditor = () => {
                     placeholder="Product name"
                   />
                 </div>
-                <div>
+                {/*<div>
                   <label className="text-sm font-medium mb-2 block">
                     Price
                   </label>
@@ -256,7 +256,7 @@ const ProductsEditor = () => {
                     }
                     placeholder="e.g., ₹299"
                   />
-                </div>
+                </div>*/}
               </div>
 
               <div>
@@ -274,7 +274,7 @@ const ProductsEditor = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
-                <div>
+              { /* <div>
                   <label className="text-sm font-medium mb-2 block">
                     Rating
                   </label>
@@ -288,7 +288,7 @@ const ProductsEditor = () => {
                       updateProduct(index, "rating", parseFloat(e.target.value))
                     }
                   />
-                </div>
+                </div>*/}
                 <div>
                   <label className="text-sm font-medium mb-2 block">
                     Upload Image

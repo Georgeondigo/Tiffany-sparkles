@@ -99,14 +99,25 @@ const AdminDashboard = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:space-x-4">
-              <h1 className="text-xl sm:text-2xl font-display font-bold text-primary">
-                Tiffany Sparkles Admin
-              </h1>
+              <div
+                className="flex items-start space-x-2 cursor-pointer"
+              >
+                <img
+                  src="/logo4.png"
+                  alt="Tiffany Sparkles Logo"
+                  className="w-8 h-8 object-contain"
+                />
+                <div>
+                  <h1 className="text-xl font-display text-primary font-semibold">
+                    Tiffany Sparkles Admin
+                  </h1> 
+                </div>
+              </div>
               <span className="text-xs sm:text-sm text-muted-foreground">
                 Welcome, {user?.email}
               </span>
             </div>
-            <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
+            <div className="flex flex-row sm:flex-row items-center gap-2 w-full sm:w-auto">
               <Button
                 variant="outline"
                 onClick={goToSite}
