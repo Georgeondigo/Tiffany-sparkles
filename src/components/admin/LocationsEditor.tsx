@@ -296,7 +296,7 @@ const LocationsEditor = () => {
                 </div>
               </div>
 
-              <div className="flex gap-2 items-center">
+              <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
                 <Button
                   onClick={() => geocodeAddress(index)}
                   variant="outline"
