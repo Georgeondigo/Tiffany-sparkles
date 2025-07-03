@@ -172,7 +172,7 @@ const Hero = () => {
               </div>
               <div className="relative">
                 <img
-                  src="/image 28.png"
+                  src="/image 28.webp"
                   alt="Premium manufacturing facility"
                   className="rounded-xl shadow-lg w-full"
                 />

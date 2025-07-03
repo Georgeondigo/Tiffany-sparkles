@@ -146,7 +146,7 @@ const About = () => {
           >
             <div className="relative">
               <img
-                src="/image 24.png"
+                src="/image 24.webp"
                 alt="Dinesh Gupta Limited manufacturing facility"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
