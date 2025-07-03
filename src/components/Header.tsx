@@ -35,7 +35,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div
-            className="flex items-center space-x-2 cursor-pointer bg-white/15 rounded-md "
+            className="flex items-center space-x-2 cursor-pointer  "
             onClick={() => {
               window.scrollTo({ top: 0, behavior: "smooth" });
               setIsMobileMenuOpen(false);
@@ -44,7 +44,7 @@ const Header = () => {
             <img
               src="/logo4.png"
               alt="Tiffany Sparkles Logo"
-              className="w-14 h-14 object-contain"
+              className="w-14 h-14 object-contain bg-white/20 rounded-full p-1 shadow"
             />
             <div className="h-0.5 bg-primary mt-1"></div>
             <div>
