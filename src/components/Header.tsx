@@ -35,7 +35,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div
-            className="flex items-center space-x-2 cursor-pointer"
+            className="flex items-center space-x-2 cursor-pointer bg-white/15 rounded-md "
             onClick={() => {
               window.scrollTo({ top: 0, behavior: "smooth" });
               setIsMobileMenuOpen(false);
