@@ -14,9 +14,9 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [content, setContent] = useState<HeroContent>({
     title: "Tiffany Sparkles",
-    subtitle: "Premium Microfiber Excellence",
+    subtitle: "Premium Microfibre Excellence",
     description:
-      "Experience the ultimate in cleaning technology with our superior microfiber cloths. Designed for modern lifestyles, crafted with precision, and built to last.",
+      "Experience the ultimate in cleaning technology with our superior Microfibre cloths. Designed for modern lifestyles, crafted with precision, and built to last.",
     image_url: "",
   });
 
@@ -42,9 +42,7 @@ const Hero = () => {
   };
 
   const scrollToProducts = () => {
-    document
-      .getElementById("products")
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToLocations = () => {
@@ -68,7 +66,7 @@ const Hero = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-primary mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary mb-6 leading-tight">
             {content.title.split(" ").map((word, index) => (
               <span
                 key={index}
@@ -133,7 +131,7 @@ const Hero = () => {
                 Global Standards
               </h3>
               <p className="text-gray-600">
-                Originally made in the EU, now proudly manufactured in East
+                 Product now available under license in East
                 Africa, maintaining the highest international quality standards.
               </p>
             </div>

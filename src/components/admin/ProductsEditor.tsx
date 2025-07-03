@@ -25,7 +25,7 @@ interface ProductsContent {
 const ProductsEditor = () => {
   const [content, setContent] = useState<ProductsContent>({
     title: 'Featured Products',
-    description: 'Discover our bestselling microfiber cloths, trusted by thousands of customers',
+    description: 'Discover our bestselling Microfibre cloths, trusted by thousands of customers',
     products: []
   });
   const [loading, setLoading] = useState(true);

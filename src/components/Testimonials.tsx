@@ -52,7 +52,7 @@ const Testimonials = () => {
       location: "Mumbai",
       rating: 5,
       message:
-        "These microfiber cloths are amazing! They clean my glass surfaces without any streaks. Best purchase I've made for my home.",
+        "These Microfibre cloths are amazing! They clean my glass surfaces without any streaks. Best purchase I've made for my home.",
     },
     {
       id: "2",

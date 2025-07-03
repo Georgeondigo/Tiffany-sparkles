@@ -39,7 +39,7 @@ const MarketingSlider = () => {
         type: "image",
         src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2000",
         title: "Revolutionary Cleaning Technology",
-        subtitle: "Experience the future of microfiber",
+        subtitle: "Experience the future of Microfibre",
         overlay: true,
       },
       {
@@ -53,7 +53,7 @@ const MarketingSlider = () => {
         type: "video",
         src: "https://www.w3schools.com/html/mov_bbb.mp4",
         title: "See the Difference",
-        subtitle: "Watch our microfiber technology in action",
+        subtitle: "Watch our Microfibre technology in action",
         overlay: true,
       },
     ],

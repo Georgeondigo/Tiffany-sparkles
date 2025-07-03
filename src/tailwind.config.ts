@@ -118,7 +118,7 @@ export default {
       fontFamily: {
         serif: ['"Playfair Display"', "serif"],
         sans: ["Inter", "sans-serif"],
-        display: ['"Cerebri Sans Book"', "sans-serif"],
+        display: ['"Cerebri Sans Book"'],
       },
     },
   },

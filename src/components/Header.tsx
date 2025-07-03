@@ -44,11 +44,14 @@ const Header = () => {
             <img
               src="/logo4.png"
               alt="Tiffany Sparkles Logo"
-              className="w-10 h-10 object-contain"
+              className="w-14 h-14 object-contain"
             />
+            <div className="h-0.5 bg-primary mt-1"></div>
             <div>
               <h1 className="text-x font-display text-primary font-semibold">
-                Tiffany Sparkles
+                Tiffany
+                <br />
+                Sparkles
               </h1>
               <div className="h-0.5 bg-primary mt-1"></div>
             </div>

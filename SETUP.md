@@ -1,14 +1,15 @@
-
 # Tiffany Sparkles - Local Development Setup
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - pnpm (recommended) or npm
 - Supabase account
 
 ### 1. Clone and Install
+
 ```bash
 git clone <repository-url>
 cd tiffany-sparkles
@@ -16,6 +17,7 @@ pnpm install
 ```
 
 ### 2. Environment Variables
+
 Create a `.env.local` file in the root directory:
 
 ```env
@@ -26,6 +28,7 @@ SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 ```
 
 ### 3. Start Development Server
+
 ```bash
 pnpm dev
 ```
@@ -35,6 +38,7 @@ The app will be available at `http://localhost:3000`
 ## 🗄️ Supabase Setup
 
 ### Database Tables
+
 Run these SQL commands in your Supabase SQL Editor:
 
 ```sql
@@ -109,13 +113,15 @@ CREATE TABLE IF NOT EXISTS public.profiles (
 ```
 
 ### Storage Buckets
+
 ```sql
 -- Create storage bucket for CMS images
-INSERT INTO storage.buckets (id, name, public) 
+INSERT INTO storage.buckets (id, name, public)
 VALUES ('cms-images', 'cms-images', true);
 ```
 
 ### Row Level Security (RLS)
+
 ```sql
 -- Enable RLS on all tables (optional for public content)
 ALTER TABLE public.content_sections ENABLE ROW LEVEL SECURITY;
@@ -132,20 +138,21 @@ CREATE POLICY "Allow public read access" ON public.testimonials FOR SELECT TO an
 CREATE POLICY "Allow public read access" ON public.faqs FOR SELECT TO anon USING (is_active = true);
 
 -- Storage policies for public access
-CREATE POLICY "Allow public read access" ON storage.objects 
+CREATE POLICY "Allow public read access" ON storage.objects
   FOR SELECT TO anon USING (bucket_id = 'cms-images');
 ```
 
 ### Sample Data (Optional)
+
 ```sql
 -- Sample contact settings
 INSERT INTO public.contact_settings (
-  whatsapp_number, 
-  instagram_url, 
-  facebook_url, 
-  tiktok_url, 
-  email, 
-  phone, 
+  whatsapp_number,
+  instagram_url,
+  facebook_url,
+  tiktok_url,
+  email,
+  phone,
   address
 ) VALUES (
   '+919876543210',
@@ -165,8 +172,8 @@ INSERT INTO public.store_locations (name, address, phone, store_type, latitude, 
 
 -- Sample FAQs
 INSERT INTO public.faqs (question, answer, order_index) VALUES
-('What makes Tiffany Sparkles microfiber cloths special?', 'Our microfiber cloths are made with premium materials that provide superior cleaning power while being gentle on all surfaces.', 1),
-('How do I care for my microfiber cloths?', 'Simply machine wash in warm water without fabric softener. Air dry or tumble dry on low heat.', 2),
+('What makes Tiffany Sparkles Microfibre cloths special?', 'Our Microfibre cloths are made with premium materials that provide superior cleaning power while being gentle on all surfaces.', 1),
+('How do I care for my Microfibre cloths?', 'Simply machine wash in warm water without fabric softener. Air dry or tumble dry on low heat.', 2),
 ('Do you offer bulk discounts?', 'Yes! Contact us for special pricing on bulk orders for businesses and institutions.', 3);
 ```
 
@@ -188,9 +195,10 @@ src/
 
 1. Create an admin user in Supabase Auth
 2. Update the user's role in the profiles table:
+
 ```sql
-UPDATE public.profiles 
-SET role = 'admin' 
+UPDATE public.profiles
+SET role = 'admin'
 WHERE email = 'your-admin-email@example.com';
 ```
 
@@ -199,6 +207,7 @@ WHERE email = 'your-admin-email@example.com';
 ## 🚀 Deployment
 
 The app can be deployed to:
+
 - Vercel (recommended)
 - Netlify
 - Any platform supporting React/Vite
@@ -208,6 +217,7 @@ Make sure to set the environment variables in your deployment platform.
 ## 📞 Support
 
 For questions or issues:
+
 - Check the console for error messages
 - Verify Supabase connection
 - Ensure all environment variables are set correctly

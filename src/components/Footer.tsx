@@ -1,14 +1,13 @@
-
-import React from 'react';
-import { Mail, Phone, MapPin, Heart } from 'lucide-react';
-import SocialMedia from './SocialMedia';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Mail, Phone, MapPin, Heart } from "lucide-react";
+import SocialMedia from "./SocialMedia";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -30,7 +29,7 @@ const Footer = () => {
 
             <p className="text-primary-foreground/90 mb-6 leading-relaxed max-w-md">
               Experience the ultimate in cleaning technology with our premium
-              microfiber cloths. Designed for modern lifestyles, crafted with
+              Microfibre cloths. Designed for modern lifestyles, crafted with
               precision, and built to last.
             </p>
 
@@ -111,11 +110,11 @@ const Footer = () => {
                 <div>
                   <p className="text-primary-foreground/90 text-sm">Address</p>
                   <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                    Dinesh Gupta Limited
+                    Dinesh Gupta LTD
                     <br />
-                    Manufacturing Complex
+                    P.O. Box 19365-40123<br />
                     <br />
-                    Nairobi, kenya 400001
+                    Kisumu, Kenya 
                   </p>
                 </div>
               </div>

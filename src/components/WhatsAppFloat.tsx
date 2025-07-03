@@ -22,11 +22,10 @@ const WhatsAppFloat = () => {
 
     return () => clearTimeout(timer);
   }, []);
-  
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
-      "Hi! I'm interested in Tiffany Sparkles microfiber cloths. Could you please help me?"
+      "Hi! I'm interested in Tiffany Sparkles Microfibre cloths. Could you please help me?"
     );
     window.open(`https://wa.me/254111294844?text=${message}`, "_blank");
     setShowTooltip(false);
@@ -50,7 +49,7 @@ const WhatsAppFloat = () => {
             <X size={16} />
           </button>
           <p className="text-sm text-foreground mb-2 pr-4">
-            👋 Need help choosing the right microfiber cloth?
+            👋 Need help choosing the right Microfibre cloth?
           </p>
           <p className="text-xs text-muted-foreground">
             Chat with us on WhatsApp for instant assistance!

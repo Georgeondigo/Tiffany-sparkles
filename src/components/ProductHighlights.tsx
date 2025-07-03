@@ -1,6 +1,5 @@
-
-import React, { useEffect, useState } from 'react';
-import { Sparkles, Shield, Zap, Award } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Sparkles, Shield, Zap, Award } from "lucide-react";
 
 const ProductHighlights = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,7 +14,7 @@ const ProductHighlights = () => {
       { threshold: 0.1 }
     );
 
-    const element = document.getElementById('products');
+    const element = document.getElementById("products");
     if (element) {
       observer.observe(element);
     }
@@ -27,23 +26,27 @@ const ProductHighlights = () => {
     {
       icon: <Sparkles className="text-[#D4AF37]" size={32} />,
       title: "Superior Cleaning Power",
-      description: "Advanced microfiber technology that captures dirt and dust with unmatched efficiency, leaving surfaces spotless and streak-free."
+      description:
+        "Advanced Microfibre technology that captures dirt and dust with unmatched efficiency, leaving surfaces spotless and streak-free.",
     },
     {
       icon: <Shield className="text-[#D4AF37]" size={32} />,
       title: "Durable & Long-lasting",
-      description: "Premium quality construction ensures our cloths maintain their effectiveness through hundreds of washes, providing exceptional value."
+      description:
+        "Premium quality construction ensures our cloths maintain their effectiveness through hundreds of washes, providing exceptional value.",
     },
     {
       icon: <Zap className="text-[#D4AF37]" size={32} />,
       title: "Quick-Dry Technology",
-      description: "Innovative fiber weave allows for rapid drying, preventing odors and maintaining hygiene between uses."
+      description:
+        "Innovative fibre weave allows for rapid drying, preventing odors and maintaining hygiene between uses.",
     },
     {
       icon: <Award className="text-[#D4AF37]" size={32} />,
       title: "Multi-Surface Safe",
-      description: "Gentle yet effective on all surfaces - from delicate screens to kitchen counters, without scratching or damage."
-    }
+      description:
+        "Gentle yet effective on all surfaces - from delicate screens to kitchen counters, without scratching or damage.",
+    },
   ];
 
   return (
@@ -71,16 +74,16 @@ const ProductHighlights = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="max-w-4xl mx-auto relative">
+          <div className="max-w-4xl Microfibrelative">
             <img
               src="/image 24.png"
-              alt="Tiffany Sparkles microfiber cloths in elegant packaging"
+              alt="Tiffany Sparkles Microfibre cloths in elegant packaging"
               className="w-full h-96 object-cover rounded-2xl shadow-2xl"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
             <div className="absolute bottom-0 left-0 right-0  backdrop-blur-sm p-2 rounded-b-2xl">
               <h3 className="text-2xl font-serif font-semibold text-background mb-2">
-                Premium Microfiber Collection
+                Premium Microfibre Collection
               </h3>
               <p className="text-background/90">
                 Available in multiple sizes and colors to suit every cleaning
@@ -126,7 +129,7 @@ const ProductHighlights = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#D4AF37] mb-2">300+</div>
+              <div className="text-3xl font-bold text-[#D4AF37] mb-2">500</div>
               <div className="text-primary font-medium">GSM Density</div>
               <div className="text-sm text-muted-foreground">
                 Ultra-absorbent

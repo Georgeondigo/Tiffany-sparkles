@@ -26,7 +26,7 @@ const FeaturedProducts = () => {
   const [content, setContent] = useState<ProductsContent>({
     title: "Featured Products",
     description:
-      "Discover our bestselling microfiber cloths, trusted by thousands of customers",
+      "Discover our bestselling Microfibre cloths, trusted by thousands of customers",
     products: [],
   });
 
@@ -128,7 +128,6 @@ const FeaturedProducts = () => {
         </div>
 
         <div className="text-center mt-12">
-        
           <div className="inline-flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md">
             <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-gray-700">
