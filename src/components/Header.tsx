@@ -49,9 +49,9 @@ const Header = () => {
             <div className="h-0.5 bg-primary mt-1"></div>
             <div>
               <h1 className="text-x font-display text-primary font-semibold">
-                Tiffany
+                TIFFANY
                 <br />
-                Sparkles
+                SPARKLES
               </h1>
               <div className="h-0.5 bg-primary mt-1"></div>
             </div>
