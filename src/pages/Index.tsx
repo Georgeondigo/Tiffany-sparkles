@@ -13,7 +13,7 @@ import LocationsMap from '../components/LocationsMap';
 import ContactSection from '../components/ContactSection';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
-import WhatsAppFloat from '../components/WhatsAppFloat';
+import WhatsAppFloat from '../components/WhatsAppFloat'
 
 const Index = () => {
   return (

@@ -57,7 +57,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 md:pt-0"
     >
       {/* Wave Decoration */}
-      <div className="absolute top-0 left-0 right-0 h-24 opacity-50 wave-decoration"></div>
+      <div className="absolute top-0 left-0 right-0 h-28 opacity-50 wave-decoration mt-4"></div>
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto pt-1 md:pt-36 px-4 text-center">

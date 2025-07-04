@@ -134,7 +134,7 @@
 
 /* Wave decoration */
 .wave-decoration {
-  background: linear-gradient(135deg, #000000 0%, #FFD700 50%, #000000 100%);
+  background: linear-gradient(125deg, #000000 0%, #FFD700 50%, #000000 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
