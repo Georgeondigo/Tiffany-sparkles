@@ -40,7 +40,7 @@ const ContactForm = () => {
   };
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent("Hi! I'm interested in Tiffany Sparkles microfiber cloths. Could you please provide more information?");
+    const message = encodeURIComponent("Hi! I'm interested in Tiffany Sparkles Microfibre cloths. Could you please provide more information?");
     window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
   };
 
