@@ -25,6 +25,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 ">
       {/* Top Bar */}
+      {!isScrolled && (
       <div className="bg-white text-[#D4AF37] text-sm px-4 py-1.5 mt-0 mb-0 flex justify-center items-center bg-background/95 backdrop-blur-md shadow-lg">
         <a
           href="https://wa.me/254718151622"
@@ -41,7 +42,8 @@ const Header = () => {
           </svg>
           <span className="font-medium">+254 718 151 622</span>
         </a>
-      </div>
+      </div> )}
+      {/* End Top Bar */}
       {/* Main Nav */}
       <nav
         className={`transition-all duration-300 ${
