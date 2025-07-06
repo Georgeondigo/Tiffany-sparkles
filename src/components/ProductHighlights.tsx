@@ -74,7 +74,7 @@ const ProductHighlights = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="max-w-4xl Microfibrelative">
+          <div className="max-w-4xl mx-auto relative">
             <img
               src="/image 24.webp"
               alt="Tiffany Sparkles Microfibre cloths in elegant packaging"
