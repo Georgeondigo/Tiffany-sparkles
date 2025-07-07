@@ -1,22 +1,3 @@
 {
-  "builds": [{ "src": "package.json", "use": "@vercel/static-build" }],
-  "routes": [
-    {
-      "src": "/defaultsite",
-      "status": 301,
-      "headers": { "Location": "/" },
-      "continue": false
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "http://tiffany-sparkles.com/:path*",
-      "destination": "https://tiffany-sparkles.com/:path*",
-      "permanent": true
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
