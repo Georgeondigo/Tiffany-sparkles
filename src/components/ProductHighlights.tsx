@@ -25,9 +25,9 @@ const ProductHighlights = () => {
   const features = [
     {
       icon: <Sparkles className="text-[#D4AF37]" size={32} />,
-      title: "Superior Cleaning Power",
+      title: "Edgeless Design Advantage",
       description:
-        "Advanced Microfibre technology that captures dirt and dust with unmatched efficiency, leaving surfaces spotless and streak-free.",
+        "Designed without stitched edges that can cause scratches, our cloths deliver seamless, swirl-free cleaning on any surface.",
     },
     {
       icon: <Shield className="text-[#D4AF37]" size={32} />,
