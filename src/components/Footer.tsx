@@ -38,8 +38,8 @@ const Footer = () => {
 
             <p className="text-primary-foreground/90 mb-6 leading-relaxed max-w-md">
               Experience the ultimate in cleaning technology with our premium
-               Edgeless Microfibre cloths. Designed for modern lifestyles, crafted with
-              precision, and built to last.
+              Edgeless Microfibre cloths. Designed for modern lifestyles,
+              crafted with precision, and built to last.
             </p>
 
             <SocialMedia />
@@ -96,7 +96,7 @@ const Footer = () => {
                     href="mailto:info@tiffanysparkles.com"
                     className="text-primary-foreground/80 hover:text-[#D4AF37] transition-colors duration-300"
                   >
-                    info@tiffanysparkles.com
+                    info@tiffany-sparkles.com
                   </a>
                 </div>
               </div>
@@ -137,7 +137,8 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-primary-foreground/80 text-sm">
-              © 2025 Tiffany Sparkles. All rights reserved.
+              © {new Date().getFullYear()} Tiffany Sparkles. All rights
+              reserved.
             </div>
 
             <div className="flex items-center space-x-6 text-sm">
