@@ -1,13 +1,21 @@
 {
-  "redirects": [
+  "builds": [{ "src": "package.json", "use": "@vercel/static-build" }],
+  "routes": [
     {
-      "source": "http://www.tiffany-sparkles.com/:path*",
-      "destination": "https://tiffany-sparkles.com/:path*",
-      "permanent": true
+      "src": "/defaultsite",
+      "status": 301,
+      "headers": { "Location": "/" },
+      "continue": false
     },
     {
-      "source": "http://tiffany-sparkles.com/defaultsite",
-      "destination": "https://tiffany-sparkles.com/",
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "http://tiffany-sparkles.com/:path*",
+      "destination": "https://tiffany-sparkles.com/:path*",
       "permanent": true
     }
   ]
