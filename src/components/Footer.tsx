@@ -19,11 +19,20 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-secondary to-gold-light rounded-full"></div>
+              <div className="w-14 h-14  rounded-full">
+                <img
+                  src="/logo4.png"
+                  alt="Tiffany Sparkles Logo"
+                  className="w-14 h-14 object-contain bg-white/20 rounded-full p-1 shadow"
+                />
+              </div>
               <div>
-                <h3 className="text-2xl font-serif font-bold">
-                  Tiffany Sparkles
+                <h3 className="text-2xl font-display font-bold">
+                  TIFFANY
+                  <br />
+                  SPARKLES
                 </h3>
+                <div className="h-0.5 bg-secondary mt-1"></div>
               </div>
             </div>
 
@@ -112,9 +121,10 @@ const Footer = () => {
                   <p className="text-primary-foreground/80 text-sm leading-relaxed">
                     Dinesh Gupta LTD
                     <br />
-                    P.O. Box 19365-40123<br />
+                    P.O. Box 19365-40123
                     <br />
-                    Kisumu, Kenya 
+                    <br />
+                    Kisumu, Kenya
                   </p>
                 </div>
               </div>
@@ -155,7 +165,7 @@ const Footer = () => {
 
           <div className="text-center mt-4 pt-4 border-t border-primary-foreground/10">
             <a
-              href="https://geowebsolutions.co.ke"
+              href="https://geowebsolutions.onrender.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="relative text-xs flex items-center justify-center hover:underline"
