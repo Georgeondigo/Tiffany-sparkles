@@ -58,7 +58,7 @@ const ProductHighlights = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">
             Why Choose <span className="text-[#D4AF37]">Tiffany Sparkles</span>?
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
