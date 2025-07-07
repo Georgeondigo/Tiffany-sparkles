@@ -1,19 +1,13 @@
 {
   "redirects": [
     {
-      "source": "/defaultsite",
-      "destination": "/",
+      "source": "http://www.tiffany-sparkles.com/:path*",
+      "destination": "https://tiffany-sparkles.com/:path*",
       "permanent": true
     },
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.tiffany-sparkles.com"
-        }
-      ],
-      "destination": "https://tiffany-sparkles.com/:path*",
+      "source": "http://tiffany-sparkles.com/defaultsite",
+      "destination": "https://tiffany-sparkles.com/",
       "permanent": true
     }
   ]
