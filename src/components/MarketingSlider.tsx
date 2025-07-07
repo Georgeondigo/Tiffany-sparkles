@@ -37,21 +37,21 @@ const MarketingSlider = () => {
     items: [
       {
         type: "image",
-        src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2000",
+        src: "/image 24.webp",
         title: "Revolutionary Cleaning Technology",
         subtitle: "Experience the future of Microfibre",
         overlay: true,
       },
       {
         type: "image",
-        src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2000",
+        src: "/image 24.webp",
         title: "Trusted by Professionals",
         subtitle: "Used in premium hotels and restaurants worldwide",
         overlay: true,
       },
       {
         type: "video",
-        src: "https://www.w3schools.com/html/mov_bbb.mp4",
+        src: "/image 28.webp",
         title: "See the Difference",
         subtitle: "Watch our Microfibre technology in action",
         overlay: true,
