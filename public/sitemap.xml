@@ -2,21 +2,28 @@
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
-  <!-- Static Pages -->
+  <!-- Homepage -->
   <url>
     <loc>https://tiffany-sparkles.com/</loc>
     <lastmod>2025-07-02</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Privacy Policy Page -->
   <url>
     <loc>https://tiffany-sparkles.com/privacy-policy</loc>
     <lastmod>2025-07-02</lastmod>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
+
+  <!-- Admin Page (Optional to Include) -->
+  <!-- Only include /admin if it is meant to be public and indexable -->
   <url>
     <loc>https://tiffany-sparkles.com/admin</loc>
     <lastmod>2025-07-02</lastmod>
-    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
   </url>
-
 </urlset>
