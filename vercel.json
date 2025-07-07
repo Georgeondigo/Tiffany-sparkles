@@ -1,3 +1,20 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "redirects": [
+    {
+      "source": "/defaultsite",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tiffany-sparkles.com"
+        }
+      ],
+      "destination": "https://tiffany-sparkles.com/:path*",
+      "permanent": true
+    }
+  ]
 }
