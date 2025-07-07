@@ -38,7 +38,7 @@ const Footer = () => {
 
             <p className="text-primary-foreground/90 mb-6 leading-relaxed max-w-md">
               Experience the ultimate in cleaning technology with our premium
-              Microfibre cloths. Designed for modern lifestyles, crafted with
+               Edgeless Microfibre cloths. Designed for modern lifestyles, crafted with
               precision, and built to last.
             </p>
 
@@ -122,7 +122,6 @@ const Footer = () => {
                     Dinesh Gupta LTD
                     <br />
                     P.O. Box 19365-40123
-                    <br />
                     <br />
                     Kisumu, Kenya
                   </p>
